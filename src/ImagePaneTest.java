@@ -18,13 +18,25 @@ public class ImagePaneTest extends JFrame
       transparentPanel.setBounds(0,0,1000,1000);
        
       JCheckBox2 HFH = new JCheckBox2();
+
+
       HFH.Name = "HFH";
       this.setLayout(null);
        transparentPanel.setLayout(null);
        //HFH.setSize(50,50);
        HFH.setBounds(690,410,20,20);
-      transparentPanel.add(HFH); 
-      super.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+       transparentPanel.add(HFH); 
+
+
+
+       //add DAVDIDSON
+       
+       JCheckBox2 LIB = new JCheckBox2();
+       LIB.Name = "LIB";
+       LIB.setBounds(460, 430, 20,20);
+       transparentPanel.add(LIB);
+
+       super.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
       dp.add(lbl,new Integer(50));
       dp.add(transparentPanel,new Integer(350));
      
