@@ -45,16 +45,16 @@
 
 
 
-  <target name="run" depends="compile"  description="run the program">
 
-<echo message= "cd ./build" />
-
-<echo
-message= "java UCSBWalk"
-/>
-
-
+  <target name="run"  description="run the UCSBWalk program">
+    <java classname="ImagePaneTest" classpath="./src " />
   </target>
+    
+
+
+
+
+
 
 
 <target name="download" > 
@@ -134,41 +134,9 @@ message= "java UCSBWalk"
 
 
 
-<target name="publish" depends="jar,javadoc,download">                           
-   <mkdir dir="${webRoot}/S12/issues/0000759" />                                      
-                                                                                                         <!--    <copy file="numberedsource.txt" todir="${webRoot}/${projectName}/browse"/>                           -->             
+         
 
-<copy file="html/index.html" todir="${webRoot}/S12/issues/0000759"/>
-                                                                                  
-   <copy file="build.xml" todir="${webRoot}/S12/issues/0000759/browse"/>              
 
-   <delete dir="${webRoot}/S12/issues/0000759/download" />
-   <mkdir dir="${webRoot}/S12/issues/0000759/download" />
-
-   <copy file="html/index.html" todir="${webRoot}/S12/issues/0000759"/>
-
-   <copy todir="${webRoot}/S12/issues/0000759/download" > 
-     <fileset dir="download"/> 
-     <fileset dir="dist" />
-   </copy> 
-
-                                                                                  
-   <copy todir="${webRoot}/S12/issues/0000759/browse/src" >                           
-     <fileset dir="src"/>                                                         
-   </copy>                                                                        
-                                                                                  
-   <chmod dir="${webRoot}/S12/issues/0000759"                                         
-          perm="755" type="both" includes="**/*"/>                                
-                                                                                  
-   <echo>Project published to ${webBaseUrl}/S12/issues/0000759</echo>                 
-</target>           
-
-<target name="linenumbers" description="Creates a file containing all source files with line numbers">               
-   <exec executable="bash">                                                                                          
-     <arg value="-c"/>                                                                                               
-     <arg value='tree -ifQ src | grep \.java\"$ | xargs pr -n > numberedsource.txt'/>                                
-   </exec>                                                                                                           
-</target>   
 
 </project>
 
