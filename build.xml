@@ -15,7 +15,10 @@
   <property name="go" value="cd build" /> 
   <property name="go1" value="java ucsbTime" />
  
-   
+  <path id = "project.class.path">
+    <pathelement location = "build"/>
+    <pathelement location = "lib/junit-4.8.2.jar" />
+  </path>
  
  
  
@@ -47,7 +50,10 @@
 
 
   <target name="run"  description="run the UCSBWalk program">
-    <java classname="ImagePaneTest" classpath="./src " />
+    <java fork = "true" classpathref = "project.class.path"
+	  classname = "ImagePaneTest"
+	  />
+	  
   </target>
     
 

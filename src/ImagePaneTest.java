@@ -11,6 +11,8 @@ public class ImagePaneTest extends JFrame
     JPanel transparentPanel = new JPanel();
     static ArrayList<JCheckBox2> boxes = new ArrayList();
     public String building1, building2, mode;
+
+    JCheckBox2[] selected = new JCheckBox2[2];
   public ImagePaneTest()
    {
      
@@ -47,9 +49,19 @@ public class ImagePaneTest extends JFrame
 
 
 
- //add TextArea that outputs the result
 
-   
+      //put the two selected boxes into boxes array
+      
+   	  
+	     
+
+
+
+
+      
+
+ //add TextArea that outputs the result
+     
     resultText.setBounds(540,40,300,140);
     resultText.append("Click two buildings and select preffered \n method of transportation");
     transparentPanel.add(resultText);
@@ -66,6 +78,11 @@ public class ImagePaneTest extends JFrame
       transparentPanel.add(CalcBike);
       CalcBike.addActionListener(new CalcBikeListener());
    }
+
+   
+    
+
+
     class CalcWalkListener implements ActionListener {
 	public void actionPerformed(ActionEvent event){
 	    if(boxes.get(0).isSelected() && boxes.get(0).isSelected()){
@@ -91,7 +108,23 @@ public class ImagePaneTest extends JFrame
   
     //add TextArea that outputs the result
 
- 
+
+
+
+    /**  public void twoSelected(){
+	  int numSelected =0;
+	  for(int i =0; i < boxes.length; i++){
+	      if(numSelected<2 && boxes.get(i).isSelected()){
+		  selected[numSelected] = boxes.get(i);
+		  numSelected++;
+	      }
+
+	      else{
+		  resultText.setText("You Selected too many boxes /n only select two!");
+	      }
+	  }
+   }
+    */
 
 	
    public static void main(String[] args)
