@@ -24,7 +24,7 @@ public class UCSBWalk {
     public static void calculate(String Building1, String Building2, String method) {
 	// TODO Auto-generated method stub
 	
-	System.out.println("Building Codes @ http://registrar.sa.ucsb.edu/locationcodes.htm");
+	//System.out.println("Building Codes @ http://registrar.sa.ucsb.edu/locationcodes.htm");
 	
 	//	System.out.print("Enter Starting Building Code: ");
 	//BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
