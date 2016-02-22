@@ -1,4 +1,3 @@
-import org.jdesktop.swingx.autocomplete.*;
 import java.util.*;
 import javax.swing.*;
 import java.awt.*;
@@ -15,7 +14,7 @@ public class MapGui extends JFrame
     public String building1, building2, mode;
     int numSelected = 0;
     BuildingCheckBox[] selected = new BuildingCheckBox[2];
-    ArrayList<String> buildingNames;
+    String[] buildingNames;
     public MapGui()
     {
 	
@@ -24,19 +23,16 @@ public class MapGui extends JFrame
 	
 	transparentPanel.setOpaque(false);
 	transparentPanel.setBounds(0,0,1000,1000);
-
+	this.setLayout(null);
+	transparentPanel.setLayout(null);
 
 	//BUILDINGS ARE:
 	//HFH, LIB, CAMPBELL, UCEN, SAN NIC, REC CEN, PHELPS, HSSB, SRB, MARINE BIO, PYSCH, MANZI,, NORTH, GIRVETZ,, EVENTS CENTER 
 
+	//add HFH
 	
 	BuildingCheckBox HFH = new BuildingCheckBox();
-
-	// add HFH 1st
 	HFH.Name = "HFH";
-	this.setLayout(null);
-	transparentPanel.setLayout(null);
-
 	HFH.setBounds(710,430,20,20);
 	transparentPanel.add(HFH); 
 	boxes.add(HFH);
@@ -44,7 +40,7 @@ public class MapGui extends JFrame
 
 
 
-	//add DAVDIDSON -2
+	//add DAVDIDSON
 	
 	BuildingCheckBox LIB = new BuildingCheckBox();
 	LIB.Name = "LIB";
@@ -53,7 +49,7 @@ public class MapGui extends JFrame
 	boxes.add(LIB);
 
 
-	//add CAMPBELL -3
+	//add CAMPBELL
 
 	BuildingCheckBox CAMPB_HALL = new BuildingCheckBox();
 	CAMPB_HALL.Name = "CAMPB";
@@ -61,7 +57,7 @@ public class MapGui extends JFrame
 	transparentPanel.add(CAMPB_HALL);
 	boxes.add(CAMPB_HALL);
 
-	//add UCEN -4
+	//add UCEN 
 
 	BuildingCheckBox UCEN = new BuildingCheckBox();
 	UCEN.Name = "UCEN";
@@ -70,7 +66,7 @@ public class MapGui extends JFrame
 	boxes.add(UCEN);
 
 
-	//add San Nic -5
+	//add San Nic 
 
 	BuildingCheckBox SAN_NIC = new BuildingCheckBox();
 	SAN_NIC.Name = "SAN NIC";
@@ -78,7 +74,7 @@ public class MapGui extends JFrame
 	boxes.add(SAN_NIC);
 	transparentPanel.add(SAN_NIC);
 
-	//add REC CEN -6**
+	//add REC CEN 
 
 	BuildingCheckBox REC = new BuildingCheckBox();
 	REC.Name = "RECEN";
@@ -86,7 +82,7 @@ public class MapGui extends JFrame
 	boxes.add(REC);
 	transparentPanel.add(REC);
 
-	//add SRB - 7th**
+	//add SRB 
 	BuildingCheckBox SRB  = new BuildingCheckBox();
 	SRB.Name = "SRB";
 	SRB.setBounds(55, 490,20,20);
@@ -94,7 +90,7 @@ public class MapGui extends JFrame
 	transparentPanel.add(SRB);
 	    
 
-	    //add MARINE BIO -8th
+	//add MARINE BIO
 	BuildingCheckBox MARINE = new BuildingCheckBox();
 	MARINE.Name = "MLAB";
 	MARINE.setBounds(590, 810, 20,20);
@@ -109,7 +105,7 @@ public class MapGui extends JFrame
 	
 	
 	
-	//add HSSB - 9th
+	//add HSSB 
 
 	BuildingCheckBox HSSB = new BuildingCheckBox();
 	HSSB.Name = "HSSB";
@@ -117,7 +113,7 @@ public class MapGui extends JFrame
 	boxes.add(HSSB);
 	transparentPanel.add(HSSB);
 
-	//add MANZI -10th
+	//add MANZI
 
 	BuildingCheckBox MANZI = new BuildingCheckBox();
 	MANZI.Name = "MANZ";
@@ -125,7 +121,7 @@ public class MapGui extends JFrame
 	boxes.add(MANZI);
 	transparentPanel.add(MANZI);
 	      	       		
-	//add phelps -11th
+	//add PHELPS
 
 	BuildingCheckBox PHELPS = new BuildingCheckBox();
 	PHELPS.Name  = "PHELP";
@@ -142,7 +138,7 @@ public class MapGui extends JFrame
 	transparentPanel.add(PSYCH);
 
 
-	//add North hall 13th
+	//add North Hall
 
 	BuildingCheckBox NH = new BuildingCheckBox();
 	NH.Name = "NH";
@@ -152,7 +148,7 @@ public class MapGui extends JFrame
 
 
 
-	//add GIRVETZ 14th 
+	//add GIRVETZ 
 
 	BuildingCheckBox GIRV = new BuildingCheckBox();
 	GIRV.Name = "GIRV";
@@ -161,7 +157,7 @@ public class MapGui extends JFrame
 	transparentPanel.add(GIRV);
 
 
-	//add Events Center 15th
+	//add Events Center
 
 	BuildingCheckBox EC = new BuildingCheckBox();
 	EC.Name = "EVENT CENTR";
@@ -181,10 +177,10 @@ public class MapGui extends JFrame
 	//add TextArea that  asks for users selection
 	resultText.setEditable(false);
 	resultText.setBounds(540,40,300,140);
-	resultText.setText("Click two buildings and select preffered \n method of transportation");
+	resultText.setText("Click two buildings or\nselect two buildings in the drop down menu\nand select preffered method of transportation");
 	transparentPanel.add(resultText);
 	
-	//Add calculate button that calls Calculuate((
+	//Add calculate button that calls UCSBWalk.calculuate()
 	
 	JButton CalcWalk = new JButton("Calculate Walking");
 	CalcWalk.setBounds(20,20,190,30);
@@ -195,33 +191,44 @@ public class MapGui extends JFrame
 	CalcBike.setBounds(20,60,190,30);
 	transparentPanel.add(CalcBike);
 	CalcBike.addActionListener(new CalcBikeListener());
-
-
-	 JButton Calc747 = new JButton("Calculate 747");
-	 Calc747.setBounds(20,100,140,30);
-	 transparentPanel.add(Calc747);
-	 Calc747.addActionListener(new Calc747Listener());
-
-	 JButton Clear  = new JButton("Clear Boxes");
-	 Clear.setBounds(20,140, 140,30);
-	 transparentPanel.add(Clear);
-	 Clear.addActionListener(new ClearListener());
-
-
 	
-
-	 buildingNames = new ArrayList(boxes.size());
-	 namesToStringList();
+	
+	JButton Calc747 = new JButton("Calculate 747");
+	Calc747.setBounds(20,100,140,30);
+	transparentPanel.add(Calc747);
+	Calc747.addActionListener(new Calc747Listener());
+	
+	JButton Clear  = new JButton("Clear Boxes");
+	Clear.setBounds(20,140, 140,30);
+	transparentPanel.add(Clear);
+	Clear.addActionListener(new ClearListener());
+	
+	
+	
+	//Add dropdown box that will automatically click the button you want
+	buildingNames = new String[boxes.size()];
+	namesToStringList();
         JComboBox dropDown = new JComboBox(buildingNames);
-	 dropDown.setBounds(200, 80 , 200,300);
-        
-	 // AutoCompleteDecorator.decorate(dropDown);
-	 transparentPanel.add(dropDown);
+	dropDown.setBounds(300, 20,200,30);
+	transparentPanel.add(dropDown);
 
-	 
-	 
+	//ActionListener for dropDown
+	ActionListener dropDownAction = new ActionListener(){
+		public void actionPerformed(ActionEvent e){
+		    String selection = (String) dropDown.getSelectedItem();
+		    
+		    for(int i = 0; i < boxes.size(); i++){
+			if (selection == boxes.get(i).Name)
+			    boxes.get(i).setSelected(true);
+		    }
+		}
+	    };
+	    
+	dropDown.addActionListener(dropDownAction);
+	    
 	
     }
+    //ActionListener Classes
     class ClearListener implements ActionListener{
 	public void actionPerformed( ActionEvent event){
 	    for(int i = 0; i < boxes.size(); i++){
@@ -248,20 +255,7 @@ public class MapGui extends JFrame
 	}
 	
     }
-    //function to add all building names into an string array for dropdown menu to use      
-    void namesToStringList(){
-	for(int i=0; i < boxes.size();i++){
-	    buildingNames.add(boxes.get(i).Name);
-	}
-    }
-
-	
-
-
-
-
-
-
+    
 	    
     class CalcWalkListener implements ActionListener {
 	public void actionPerformed(ActionEvent event){
@@ -303,9 +297,14 @@ public class MapGui extends JFrame
     }
     
  
+    //Helper Functions
     
-    
-    
+    //function to add all building names into an string array for dropdown menu to use      
+    void namesToStringList(){
+	for(int i=0; i < boxes.size();i++){
+	    buildingNames[i] = boxes.get(i).Name;
+	}
+    }
     
     public void getSelectedBuildings(){
 	numSelected =0;
@@ -319,18 +318,15 @@ public class MapGui extends JFrame
 		else
 		    secSel = i;
 	       
-	    }
-	
-	   
-	   
-		selected[0] = boxes.get(firstSel);
-		selected[1] = boxes.get(secSel);
-		   
-		
-    }
+	    }	   
+	    selected[0] = boxes.get(firstSel);
+	    selected[1] = boxes.get(secSel);
+	    
+	    
+	}
     }
     
-
+    
     
     public static void main(String[] args)
     {
