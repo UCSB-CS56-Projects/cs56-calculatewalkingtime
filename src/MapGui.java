@@ -1,3 +1,4 @@
+import org.jdesktop.swingx.autocomplete.*;
 import java.util.*;
 import javax.swing.*;
 import java.awt.*;
@@ -14,6 +15,7 @@ public class MapGui extends JFrame
     public String building1, building2, mode;
     int numSelected = 0;
     BuildingCheckBox[] selected = new BuildingCheckBox[2];
+    ArrayList<String> buildingNames;
     public MapGui()
     {
 	
@@ -204,6 +206,19 @@ public class MapGui extends JFrame
 	 Clear.setBounds(20,140, 140,30);
 	 transparentPanel.add(Clear);
 	 Clear.addActionListener(new ClearListener());
+
+
+	
+
+	 buildingNames = new ArrayList(boxes.size());
+	 namesToStringList();
+        JComboBox dropDown = new JComboBox(buildingNames);
+	 dropDown.setBounds(200, 80 , 200,300);
+        
+	 // AutoCompleteDecorator.decorate(dropDown);
+	 transparentPanel.add(dropDown);
+
+	 
 	 
 	
     }
@@ -233,8 +248,21 @@ public class MapGui extends JFrame
 	}
 	
     }
-            
-    
+    //function to add all building names into an string array for dropdown menu to use      
+    void namesToStringList(){
+	for(int i=0; i < boxes.size();i++){
+	    buildingNames.add(boxes.get(i).Name);
+	}
+    }
+
+	
+
+
+
+
+
+
+	    
     class CalcWalkListener implements ActionListener {
 	public void actionPerformed(ActionEvent event){
 	  
