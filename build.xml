@@ -2,8 +2,8 @@
 
 <project default="compile">
 
-  <!-- build.xml for CP2, S12, CS56
-       name: @@@ Alexander Asrian @@@ -->
+  <!-- build.xml for CS56, W16, CS56
+       name: @@@ Jonathan Segovia and Michael Caccamo @@@  -->
 
    <property environment="env"/> <!-- load the environment variables --> 
    <property name="webRoot" value="${env.HOME}/public_html/cs56" />
@@ -23,16 +23,16 @@
  
  
 
- <target name="compile" >  
-  <mkdir dir="build" />
-                        <copy file = "src/LatLong.txt" todir="build"/>             
-   <javac srcdir="src" destdir="build" includeantruntime="false" debug="true" debuglevel="lines,vars,source" >   
-
-                                                                                                                                              
-     <classpath>                                                                                                                              
+  <target name="compile" >  
+    <mkdir dir="build" />
+    <copy file = "src/LatLong.txt" todir="build"/>    <copy file = "src/map.jpg" todir = "build"/>
+    <javac srcdir="src" destdir="build" includeantruntime="false" debug="true" debuglevel="lines,vars,source" >   
+      
+      
+     <classpath refid = "project.class.path"/>                                                                                                                     <!--
          <pathelement location="build"/>                                                                                                          
          <pathelement location="/cs/faculty/pconrad/public_html/cs56/lib/junit-4.8.2.jar"/>                                                   
-     </classpath>                                                                                        
+                     -->                                           
    </javac>       
  </target>
 
@@ -51,7 +51,7 @@
 
   <target name="run"  description="run the UCSBWalk program">
     <java fork = "true" classpathref = "project.class.path"
-	  classname = "ImagePaneTest"
+	  classname = "MapGui"
 	  />
 	  
   </target>

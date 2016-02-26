@@ -78,8 +78,9 @@ public class UCSBWalk {
 	
 	
 	
-	File file = new File("LatLong.txt");
-	
+	//File file = new File("LatLong.txt");
+
+	File file = new File(ClassLoader.getSystemResource("LatLong.txt").getFile());
 	try {
 	    
 	    Scanner scanner = new Scanner(file);
@@ -105,11 +106,11 @@ public class UCSBWalk {
 	    e.printStackTrace();
 	}
 	
-	File file1 = new File("LatLong.txt");
+	//File file1 = new File("LatLong.txt");
 	
 	try {
 	    
-	    Scanner scanner1 = new Scanner(file1);
+	    Scanner scanner1 = new Scanner(file);
 	    scanner1.useDelimiter(","); 
 	    
 	    check1 = scanner1.next();
@@ -153,7 +154,7 @@ public class UCSBWalk {
 	
 	
 	
-	File file = new File("LatLong.txt");
+	File file = new File(ClassLoader.getSystemResource("LatLong.txt").getFile());
 	
 	try {
 	    
@@ -180,11 +181,11 @@ public class UCSBWalk {
 	    e.printStackTrace();
 	}
 	
-	File file1 = new File("LatLong.txt");
+	//File file1 = new File("LatLong.txt");
 	
 	try {
 	    
-	    Scanner scanner1 = new Scanner(file1);
+	    Scanner scanner1 = new Scanner(file);
 	    scanner1.useDelimiter(","); 
 	    
 	    check1 = scanner1.next();

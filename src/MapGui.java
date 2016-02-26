@@ -6,7 +6,9 @@ public class MapGui extends JFrame
 {
     JTextArea exitExplicit = new JTextArea();
     JTextArea resultText =  new JTextArea();
-    ImageIcon ic = new   ImageIcon("map.jpg");
+    //ImageIcon ic = new   ImageIcon("map.jpg");
+    java.net.URL imgURL = getClass().getResource("/map.jpg");
+     ImageIcon ic = new ImageIcon(imgURL);
     JDesktopPane dp = new JDesktopPane();
     JLabel lbl = new JLabel(ic);
     JPanel transparentPanel = new JPanel();
