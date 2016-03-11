@@ -28,40 +28,7 @@ public class UCSBWalk {
      */
     public static String result;
     public static void calculate(String Building1, String Building2, String method) {
-	// TODO Auto-generated method stub
-	
-	//System.out.println("Building Codes @ http://registrar.sa.ucsb.edu/locationcodes.htm");
-	
-	//	System.out.print("Enter Starting Building Code: ");
-	//BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-	//String startBuild = null;
-	//try {
-	// startBuild = br.readLine();
-	// } catch (IOException e) {
-	// System.out.println("Error!");
-	// System.exit(1);}
-	
-	//System.out.print("Enter Destination Building Code: ");
-	//    BufferedReader br1 = new BufferedReader(new InputStreamReader(System.in));
-	//	String endBuild = null;
-	//	try {
-	//    endBuild = br1.readLine();
-	//	} catch (IOException e) {
-	//		System.out.println("Error!");
-	//		System.exit(1);}
-	
-	
-	
-	//	 System.out.print("Mode(bicycling or walking)?: ");
-	//		BufferedReader br4 = new BufferedReader(new InputStreamReader(System.in));
-	//		String mode = null;
-	//		try {
-	//			mode = br4.readLine();
-	//		} 
-	//		catch (IOException e) {
-	//				System.out.println("Error!");
-	//				System.exit(1);
-	//				}
+
 	
 	
 	
@@ -181,7 +148,7 @@ public class UCSBWalk {
 	    e.printStackTrace();
 	}
 	
-	//File file1 = new File("LatLong.txt");
+
 	
 	try {
 	    
