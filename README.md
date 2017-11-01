@@ -16,3 +16,20 @@ To clean:
 ```
 ant clean
 ```
+
+## Features
+There is a limited number of lists currently:
+* Calculate Time with Distance
+  * Walking
+  * Biking
+  * Flying by Plane (Boeing 747)
+* Dropdown List for easier access
+* Simple Checkboxes
+* ClearAll button
+
+## Screenshots
+
+![Screenshot 1](images/screenshot.png?raw=true)
+
+## Future Features
+*
