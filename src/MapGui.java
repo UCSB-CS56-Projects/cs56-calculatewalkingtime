@@ -29,7 +29,7 @@ public class MapGui extends JFrame
 	transparentPanel.setLayout(null);
 
 	//BUILDINGS ARE:
-	//HFH, LIB, CAMPBELL, UCEN, SAN NIC, REC CEN, PHELPS, HSSB, SRB, MARINE BIO, PYSCH, MANZI,, NORTH, GIRVETZ,, EVENTS CENTER 
+	//HFH, LIB, CAMPBELL, UCEN, SAN NIC, REC CEN, PHELPS, HSSB, SRB, MARINE BIO, PYSCH, MANZI, NORTH, GIRVETZ, EVENTS CENTER, RGYM, ANCAP HALL 
 
 	//add HFH
 	
@@ -37,10 +37,23 @@ public class MapGui extends JFrame
 	HFH.Name = "HFH";
 	HFH.setBounds(710,430,20,20);
 	transparentPanel.add(HFH); 
-	boxes.add(HFH);
-	
+	boxes.add(HFH);	
 
+	//add RGYM
 
+	BuildingCheckBox RGYM = new BuildingCheckBox();
+	RGYM.Name = "RGYM";
+	RGYM.setBounds(246,248,20,20);
+	transparentPanel.add(RGYM); 
+	boxes.add(RGYM);
+
+	//add ANCAP HALL
+
+	BuildingCheckBox ANCAP_HALL = new BuildingCheckBox();
+	ANCAP_HALL.Name = "ANCAP HALL";
+	ANCAP_HALL.setBounds(590,610,20,20);
+	transparentPanel.add(ANCAP_HALL); 
+	boxes.add(ANCAP_HALL);
 
 	//add DAVDIDSON
 	
@@ -166,6 +179,58 @@ public class MapGui extends JFrame
 	EC.setBounds(130, 440, 20,20);
 	boxes.add(EC);
 	transparentPanel.add(EC);
+
+	//add ARTS
+
+	BuildingCheckBox ARTS = new BuildingCheckBox();
+	ARTS.Name = "ARTS";
+	ARTS.setBounds(246,500,20,20);
+	transparentPanel.add(ARTS); 
+	boxes.add(ARTS);
+
+	//add BIO LAB 2
+
+	BuildingCheckBox BIOL2 = new BuildingCheckBox();
+	BIOL2.Name = "BIOL2";
+	BIOL2.setBounds(633,520,20,20);
+	transparentPanel.add(BIOL2); 
+	boxes.add(BIOL2);
+
+	//add BROIDA
+
+	//add BREN
+
+	BuildingCheckBox BREN = new BuildingCheckBox();
+	BREN.Name = "BREN";
+	BREN.setBounds(653,500,20,20);
+	transparentPanel.add(BREN); 
+	boxes.add(BREN);
+
+	//add BUCHN HALL
+
+	//add CHEM
+
+	//add ENGR2
+
+	//add KOHN
+
+	//add LSB
+
+	//add MUSIC
+
+	//add NOBLE
+
+	//add SAN MIGEL
+
+	//add SAN RAFEL
+
+	//add SANTA CRUZ
+
+	//add SANTA ROSA
+
+	//add WEBB
+
+	//add DLG
 
 	//****END OF BUILDINGS*****
 
