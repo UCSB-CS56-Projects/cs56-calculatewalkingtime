@@ -32,4 +32,8 @@ There is a limited number of lists currently:
 ![Screenshot 1](images/screenshot.png?raw=true)
 
 ## Future Features
-*
+* Refractor GUI
+* FULL Campus Map
+* Google API Integrated
+* GOLD Class Support
+* MORE TO COME
