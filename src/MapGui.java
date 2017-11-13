@@ -384,10 +384,9 @@ public class MapGui extends JFrame
 		resultText.setText(UCSBWalk.result);
 		}
 		else if(numSelected > 2)
-		    resultText.setText("You clicked more than two buildings!");
-
+		    JOptionPane.showMessageDialog(null, "You clicked more than two buildings!", "Two Checkboxes ONLY", JOptionPane.WARNING_MESSAGE);
 		else
-		    resultText.setText("You need to click two buildings!");
+		    JOptionPane.showMessageDialog(null, "You need to click two buildings!", "Two Checkboxes Please", JOptionPane.WARNING_MESSAGE);
 				      
 	    
 	}
@@ -404,10 +403,9 @@ public class MapGui extends JFrame
 		resultText.setText(UCSBWalk.result);
 		}
 		else if(numSelected > 2)
-		    resultText.setText("You clicked more than two buildings!");
-
+		    JOptionPane.showMessageDialog(null, "You clicked more than two buildings!", "Two Checkboxes ONLY", JOptionPane.WARNING_MESSAGE);
 		else
-		    resultText.setText("You need to click two buildings!");
+		    JOptionPane.showMessageDialog(null, "You need to click two buildings!", "Two Checkboxes Please", JOptionPane.WARNING_MESSAGE);
 				      
 	    
 	}
@@ -424,9 +422,9 @@ public class MapGui extends JFrame
 		}
 
 		else if(numSelected > 2 )
-		    resultText.setText("You clicked more than two buildings!");
+		    JOptionPane.showMessageDialog(null, "You clicked more than two buildings!", "Two Checkboxes ONLY", JOptionPane.WARNING_MESSAGE);
 		else
-		    resultText.setText("You need to click two buildings!");
+		    JOptionPane.showMessageDialog(null, "You need to click two buildings!", "Two Checkboxes Please", JOptionPane.WARNING_MESSAGE);
 
 
 	}
