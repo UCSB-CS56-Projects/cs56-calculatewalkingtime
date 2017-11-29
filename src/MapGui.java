@@ -32,89 +32,27 @@ public class MapGui extends JFrame
 	//BUILDINGS ARE:
 	//HFH, LIB, CAMPBELL, UCEN, SAN NIC, REC CEN, PHELPS, HSSB, SRB, MARINE BIO, PYSCH, MANZI, NORTH, GIRVETZ, EVENTS CENTER, RGYM, ANCAP HALL 
 
-	//add HFH
+	makeBuilding("HFH",710,430,20,20);
+	makeBuilding("RGYM",246,248,20,20);
 	
-	/*BuildingCheckBox HFH = new BuildingCheckBox();
-	HFH.Name = "HFH";
-	HFH.setBounds(710,430,20,20);
-	transparentPanel.add(HFH); 
-	boxes.add(HFH);	*/
-
-	Building("HFH",710,430,20,20);
-
-	//add RGYM
-
-	BuildingCheckBox RGYM = new BuildingCheckBox();
-	RGYM.Name = "RGYM";
-	RGYM.setBounds(246,248,20,20);
-	transparentPanel.add(RGYM); 
-	boxes.add(RGYM);
-
-	//add ANCAP HALL
-
-	BuildingCheckBox ANCAP_HALL = new BuildingCheckBox();
-	ANCAP_HALL.Name = "ANCAP HALL";
-	ANCAP_HALL.setBounds(590,610,20,20);
-	transparentPanel.add(ANCAP_HALL); 
-	boxes.add(ANCAP_HALL);
-
-	//add DAVDIDSON
-	
-	BuildingCheckBox LIB = new BuildingCheckBox();
-	LIB.Name = "LIB";
-	LIB.setBounds(460,430,20,20);
-	transparentPanel.add(LIB);
-	boxes.add(LIB);
 
 
+	makeBuilding("ANCAP_HALL",590,610,20,20);
+
+	makeBuilding("LIB",460,430,20,20);
 	//add CAMPBELL
-
-	BuildingCheckBox CAMPB_HALL = new BuildingCheckBox();
-	CAMPB_HALL.Name = "CAMPB";
-	CAMPB_HALL.setBounds(475, 246, 20,20);
-	transparentPanel.add(CAMPB_HALL);
-	boxes.add(CAMPB_HALL);
-
-	//add UCEN 
-
-	BuildingCheckBox UCEN = new BuildingCheckBox();
-	UCEN.Name = "UCEN";
-	UCEN.setBounds(370,565,20,20);
-	transparentPanel.add(UCEN);
-	boxes.add(UCEN);
+	makeBuilding("CAMPB_HALL",475, 246, 20,20);
+        makeBuilding("UCEN",370,565,20,20);
 
 
 	//add San Nic 
 
-	BuildingCheckBox SAN_NIC = new BuildingCheckBox();
-	SAN_NIC.Name = "SAN NIC";
-	SAN_NIC.setBounds(420, 700, 20,20);
-	boxes.add(SAN_NIC);
-	transparentPanel.add(SAN_NIC);
+        makeBuilding("SAN_NIC",420, 700, 20,20);
 
-	//add REC CEN 
+	makeBuilding("REC",265,110,20,20);
+	makeBuilding("SRB",55, 490,20,20);
 
-	BuildingCheckBox REC = new BuildingCheckBox();
-	REC.Name = "RECEN";
-	REC.setBounds(265,110,20,20);
-	boxes.add(REC);
-	transparentPanel.add(REC);
-
-	//add SRB 
-	BuildingCheckBox SRB  = new BuildingCheckBox();
-	SRB.Name = "SRB";
-	SRB.setBounds(55, 490,20,20);
-	boxes.add(SRB);
-	transparentPanel.add(SRB);
-	    
-
-	//add MARINE BIO
-	BuildingCheckBox MARINE = new BuildingCheckBox();
-	MARINE.Name = "MLAB";
-	MARINE.setBounds(590, 810, 20,20);
-	boxes.add(MARINE);
-	transparentPanel.add(MARINE);
-	   
+        makeBuilding("MARINE",590, 810, 20,20);
 	super.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	dp.add(lbl,new Integer(50));
 	dp.add(transparentPanel,new Integer(350));
@@ -125,188 +63,63 @@ public class MapGui extends JFrame
 	
 	//add HSSB 
 
-	BuildingCheckBox HSSB = new BuildingCheckBox();
-	HSSB.Name = "HSSB";
-	HSSB.setBounds(189, 434, 20,20);
-	boxes.add(HSSB);
-	transparentPanel.add(HSSB);
-
+        makeBuilding("HSSB",189, 434, 20,20);
 	//add MANZI 110
 
-	BuildingCheckBox MANZI = new BuildingCheckBox();
-	MANZI.Name = "MANZ";
-	MANZI.setBounds(43, 740,20,20);
-	boxes.add(MANZI);
-	transparentPanel.add(MANZI);
-	      	       		
+        makeBuilding("MANZI",43, 740,20,20);	
 	//add PHELPS
 
-	BuildingCheckBox PHELPS = new BuildingCheckBox();
-	PHELPS.Name  = "PHELP";
-	PHELPS.setBounds(530,250,20,20);
-	boxes.add(PHELPS);
-	transparentPanel.add(PHELPS);
-	
+	makeBuilding("PHELPS",530,250,20,20);
 	// add Psych 12th
 
-	BuildingCheckBox PSYCH = new BuildingCheckBox();
-	PSYCH.Name = "PSYCH";
-	PSYCH.setBounds(480,520,20,20);
-	boxes.add(PSYCH);
-	transparentPanel.add(PSYCH);
-
-
+        makeBuilding("PSYCH",480,520,20,20);
 	//add North Hall
 
-	BuildingCheckBox NH = new BuildingCheckBox();
-	NH.Name = "NH";
-	NH.setBounds(410,326,20,20);
-	boxes.add(NH);
-	transparentPanel.add(NH);
-
-
+        makeBuilding("NH",410,326,20,20);
 	//add GIRVETZ 
 
-	BuildingCheckBox GIRV = new BuildingCheckBox();
-	GIRV.Name = "GIRV";
-	GIRV.setBounds(380,420,20,20);
-	boxes.add(GIRV);
-	transparentPanel.add(GIRV);
-
-
+        makeBuilding("GIRV",380,420,20,20);
 	//add Events Center
 
-	BuildingCheckBox EC = new BuildingCheckBox();
-	EC.Name = "EVENT CENTR";
-	EC.setBounds(130, 440, 20,20);
-	boxes.add(EC);
-	transparentPanel.add(EC);
-
+        makeBuilding("EC",130, 440, 20,20);
 	//add ARTS
 
-	BuildingCheckBox ARTS = new BuildingCheckBox();
-	ARTS.Name = "ARTS";
-	ARTS.setBounds(260,510,20,20);
-	boxes.add(ARTS);
-	transparentPanel.add(ARTS);
-
+        makeBuilding("ARTS",260,510,20,20);
 	//add BIO LAB 2
 
-	BuildingCheckBox BIOL2 = new BuildingCheckBox();
-	BIOL2.Name = "BIOL2";
-	BIOL2.setBounds(628,520,20,20);
-	boxes.add(BIOL2);
-	transparentPanel.add(BIOL2); 
-
+        makeBuilding("BIOL2",628,520,20,20);
 	//add BROIDA
 
-	BuildingCheckBox BROIDA = new BuildingCheckBox();
-	BROIDA.Name = "BROIDA";
-	BROIDA.setBounds(595,380,20,20);
-	transparentPanel.add(BROIDA);
-	boxes.add(BROIDA);
-
+        makeBuilding("BROIDA",595,380,20,20);
 	//add BREN
 
-	BuildingCheckBox BREN = new BuildingCheckBox();
-	BREN.Name = "BREN";
-	BREN.setBounds(653,470,20,20); 
-	boxes.add(BREN);
-	transparentPanel.add(BREN); 
-
+        makeBuilding("BREN",653,470,20,20); 
 	//add BUCHN HALL
-	BuildingCheckBox BUCHN_HALL = new BuildingCheckBox();
-	BUCHN_HALL.Name = "BUCHN HALL";
-	BUCHN_HALL.setBounds(516,298,20,20);
-	boxes.add(BUCHN_HALL);
-	transparentPanel.add(BUCHN_HALL);
-			    
+        makeBuilding("BUCHN_HALL",516,298,20,20);			    
 	//add CHEM
-	BuildingCheckBox CHEM = new BuildingCheckBox();
-	CHEM.Name = "CHEM";
-	CHEM.setBounds(623,316,20,20);
-	boxes.add(CHEM);
-	transparentPanel.add(CHEM);
-
-	//add ENGR2
-	BuildingCheckBox ENGR2 = new BuildingCheckBox();
-	ENGR2.Name = "ENGR2";
-	ENGR2.setBounds(695,346,20,20);
-	transparentPanel.add(ENGR2);
-	boxes.add(ENGR2);
-
+        makeBuilding("CHEM",623,316,20,20);
+	
+        makeBuilding("ENGR2",695,346,20,20);
 	//add KOHN
-	BuildingCheckBox KOHN = new BuildingCheckBox();
-	KOHN.Name = "KOHN";
-	KOHN.setBounds(780,320,20,20);
-	boxes.add(KOHN);
-	transparentPanel.add(KOHN);
-
+        makeBuilding("KOHN",780,320,20,20);
 	//add LSB
-	BuildingCheckBox LSB = new BuildingCheckBox();
-	LSB.Name = "LSB";
-	LSB.setBounds(565,568,20,20);
-	boxes.add(LSB);
-	transparentPanel.add(LSB);
-
+        makeBuilding("LSB",565,568,20,20);
 	//add MUSIC
-	BuildingCheckBox MUSIC = new BuildingCheckBox();
-	MUSIC.Name = "MUSIC";
-	MUSIC.setBounds(370,517,20,20);
-	boxes.add(MUSIC);
-	transparentPanel.add(MUSIC);
-
+        makeBuilding("MUSIC",370,517,20,20);
 	//add NOBLE
-	BuildingCheckBox NOBLE = new BuildingCheckBox();
-	NOBLE.Name = "NOBLE";
-	NOBLE.setBounds(550,510,20,20);
-	boxes.add(NOBLE);
-	transparentPanel.add(NOBLE);
-
+        makeBuilding("NOBLE",550,510,20,20);
 	//add SAN MIGEL
-	BuildingCheckBox SAN_MIGEL = new BuildingCheckBox();
-	SAN_MIGEL.Name = "SAN MIGEL";
-	SAN_MIGEL.setBounds(370,645,20,20);
-	transparentPanel.add(SAN_MIGEL);
-	boxes.add(SAN_MIGEL);
-
+        makeBuilding("SAN_MIGEL",370,645,20,20);
 	//add SAN RAFEL
-	BuildingCheckBox SAN_RAFEL = new BuildingCheckBox();
-	SAN_RAFEL.Name = "SAN RAFEL";
-	SAN_RAFEL.setBounds(110,610,20,20);
-	boxes.add(SAN_RAFEL);
-	transparentPanel.add(SAN_RAFEL);
-	
-	//add SANTA CRUZ
-	BuildingCheckBox SANTA_CRUZ = new BuildingCheckBox();
-	SANTA_CRUZ.Name = "SANTA CRUZ";
-	SANTA_CRUZ.setBounds(590,680,20,20);
-	boxes.add(SANTA_CRUZ);
-	transparentPanel.add(SANTA_CRUZ);
-
+	makeBuilding("SAN_RAFEL",110,610,20,20);
+        makeBuilding("SANTA_CRUZ",590,680,20,20);
 	//add SANTA ROSA
-	BuildingCheckBox SANTA_ROSA = new BuildingCheckBox();
-	SANTA_ROSA.Name = "SANTA ROSA";
-	SANTA_ROSA.setBounds(500,610,20,20);
-	boxes.add(SANTA_ROSA);
-	transparentPanel.add(SANTA_ROSA);
-	
+        makeBuilding("SANTA_ROSA",500,610,20,20);
 	//add WEBB
-	BuildingCheckBox WEBB = new BuildingCheckBox();
-	WEBB.Name = "WEBB";
-	WEBB.setBounds(565,456,20,20);
-	boxes.add(WEBB);
-	transparentPanel.add(WEBB);
-
+        makeBuilding("WEBB",565,456,20,20);
 	//add DLG
-	BuildingCheckBox DLG = new BuildingCheckBox();
-	DLG.Name = "DLG";
-	DLG.setBounds(470,700,20,20);
-	boxes.add(DLG);
-	transparentPanel.add(DLG);
-
+        makeBuilding("DLG",470,700,20,20);
 	//****END OF BUILDINGS*****
-
 	//add explicit exit instructions
 
 	exitExplicit.setEditable(false);
@@ -475,5 +288,12 @@ public class MapGui extends JFrame
 	
     }
     
+    public void makeBuilding(String name, int x, int y, int l, int w) {
+	    BuildingCheckBox abbrev = new BuildingCheckBox();
+	    abbrev.Name = name;
+	    abbrev.setBounds(x,y,l,w);
+	    boxes.add(abbrev);
+	    transparentPanel.add(abbrev);
+    }
     
 }
