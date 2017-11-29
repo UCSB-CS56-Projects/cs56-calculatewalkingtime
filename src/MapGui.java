@@ -88,7 +88,7 @@ public class MapGui extends JFrame
 
 	BuildingCheckBox SAN_NIC = new BuildingCheckBox();
 	SAN_NIC.Name = "SAN NIC";
-	SAN_NIC.setBounds( 420, 700, 20,20);
+	SAN_NIC.setBounds(420, 700, 20,20);
 	boxes.add(SAN_NIC);
 	transparentPanel.add(SAN_NIC);
 
@@ -186,7 +186,7 @@ public class MapGui extends JFrame
 
 	BuildingCheckBox ARTS = new BuildingCheckBox();
 	ARTS.Name = "ARTS";
-	ARTS.setBounds(246,500,20,20);
+	ARTS.setBounds(260,510,20,20);
 	boxes.add(ARTS);
 	transparentPanel.add(ARTS);
 
@@ -194,7 +194,7 @@ public class MapGui extends JFrame
 
 	BuildingCheckBox BIOL2 = new BuildingCheckBox();
 	BIOL2.Name = "BIOL2";
-	BIOL2.setBounds(633,520,20,20);
+	BIOL2.setBounds(628,520,20,20);
 	boxes.add(BIOL2);
 	transparentPanel.add(BIOL2); 
 
@@ -210,42 +210,42 @@ public class MapGui extends JFrame
 
 	BuildingCheckBox BREN = new BuildingCheckBox();
 	BREN.Name = "BREN";
-	BREN.setBounds(653,500,20,20); 
+	BREN.setBounds(653,470,20,20); 
 	boxes.add(BREN);
 	transparentPanel.add(BREN); 
 
 	//add BUCHN HALL
 	BuildingCheckBox BUCHN_HALL = new BuildingCheckBox();
 	BUCHN_HALL.Name = "BUCHN HALL";
-	BUCHN_HALL.setBounds(520,316,20,20);
+	BUCHN_HALL.setBounds(516,298,20,20);
 	boxes.add(BUCHN_HALL);
 	transparentPanel.add(BUCHN_HALL);
 			    
 	//add CHEM
 	BuildingCheckBox CHEM = new BuildingCheckBox();
 	CHEM.Name = "CHEM";
-	CHEM.setBounds(660,306,20,20);
+	CHEM.setBounds(623,316,20,20);
 	boxes.add(CHEM);
 	transparentPanel.add(CHEM);
 
 	//add ENGR2
 	BuildingCheckBox ENGR2 = new BuildingCheckBox();
 	ENGR2.Name = "ENGR2";
-	ENGR2.setBounds(420,420,20,20);
+	ENGR2.setBounds(695,346,20,20);
 	transparentPanel.add(ENGR2);
 	boxes.add(ENGR2);
 
 	//add KOHN
 	BuildingCheckBox KOHN = new BuildingCheckBox();
 	KOHN.Name = "KOHN";
-	KOHN.setBounds(800,403,20,20);
+	KOHN.setBounds(780,320,20,20);
 	boxes.add(KOHN);
 	transparentPanel.add(KOHN);
 
 	//add LSB
 	BuildingCheckBox LSB = new BuildingCheckBox();
 	LSB.Name = "LSB";
-	LSB.setBounds(585,570,20,20);
+	LSB.setBounds(565,568,20,20);
 	boxes.add(LSB);
 	transparentPanel.add(LSB);
 
@@ -258,7 +258,7 @@ public class MapGui extends JFrame
 
 	//add NOBLE
 	BuildingCheckBox NOBLE = new BuildingCheckBox();
-	NOBLE.Name = "Noble";
+	NOBLE.Name = "NOBLE";
 	NOBLE.setBounds(550,510,20,20);
 	boxes.add(NOBLE);
 	transparentPanel.add(NOBLE);
@@ -294,14 +294,14 @@ public class MapGui extends JFrame
 	//add WEBB
 	BuildingCheckBox WEBB = new BuildingCheckBox();
 	WEBB.Name = "WEBB";
-	WEBB.setBounds(585,459,20,20);
+	WEBB.setBounds(565,456,20,20);
 	boxes.add(WEBB);
 	transparentPanel.add(WEBB);
 
 	//add DLG
 	BuildingCheckBox DLG = new BuildingCheckBox();
 	DLG.Name = "DLG";
-	DLG.setBounds(470,605,20,20);
+	DLG.setBounds(470,700,20,20);
 	boxes.add(DLG);
 	transparentPanel.add(DLG);
 
