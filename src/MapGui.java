@@ -2,6 +2,12 @@ import java.util.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.io.*;
+// a simple issues library
+//import ca.odell.issuezilla.*;
+// glazed lists
+//import ca.odell.glazedlists.*;
+//import ca.odell.glazedlists.swing.*;
 
 public class MapGui extends JFrame
 {
@@ -34,90 +40,43 @@ public class MapGui extends JFrame
 
 	makeBuilding("HFH",710,430,20,20);
 	makeBuilding("RGYM",246,248,20,20);
-	
-
-
 	makeBuilding("ANCAP_HALL",590,610,20,20);
-
 	makeBuilding("LIB",460,430,20,20);
-	//add CAMPBELL
 	makeBuilding("CAMPB_HALL",475, 246, 20,20);
         makeBuilding("UCEN",370,565,20,20);
-
-
-	//add San Nic 
-
         makeBuilding("SAN_NIC",420, 700, 20,20);
-
 	makeBuilding("REC",265,110,20,20);
 	makeBuilding("SRB",55, 490,20,20);
-
         makeBuilding("MARINE",590, 810, 20,20);
 	super.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	dp.add(lbl,new Integer(50));
 	dp.add(transparentPanel,new Integer(350));
 	
 	setLayeredPane(dp);
-	
-	
-	
-	//add HSSB 
 
         makeBuilding("HSSB",189, 434, 20,20);
-	//add MANZI 110
-
         makeBuilding("MANZI",43, 740,20,20);	
-	//add PHELPS
-
 	makeBuilding("PHELPS",530,250,20,20);
-	// add Psych 12th
-
         makeBuilding("PSYCH",480,520,20,20);
-	//add North Hall
-
         makeBuilding("NH",410,326,20,20);
-	//add GIRVETZ 
-
         makeBuilding("GIRV",380,420,20,20);
-	//add Events Center
-
         makeBuilding("EC",130, 440, 20,20);
-	//add ARTS
-
         makeBuilding("ARTS",260,510,20,20);
-	//add BIO LAB 2
-
         makeBuilding("BIOL2",628,520,20,20);
-	//add BROIDA
-
         makeBuilding("BROIDA",595,380,20,20);
-	//add BREN
-
         makeBuilding("BREN",653,470,20,20); 
-	//add BUCHN HALL
         makeBuilding("BUCHN_HALL",516,298,20,20);			    
-	//add CHEM
         makeBuilding("CHEM",623,316,20,20);
-	
         makeBuilding("ENGR2",695,346,20,20);
-	//add KOHN
         makeBuilding("KOHN",780,320,20,20);
-	//add LSB
         makeBuilding("LSB",565,568,20,20);
-	//add MUSIC
         makeBuilding("MUSIC",370,517,20,20);
-	//add NOBLE
         makeBuilding("NOBLE",550,510,20,20);
-	//add SAN MIGEL
         makeBuilding("SAN_MIGEL",370,645,20,20);
-	//add SAN RAFEL
 	makeBuilding("SAN_RAFEL",110,610,20,20);
         makeBuilding("SANTA_CRUZ",590,680,20,20);
-	//add SANTA ROSA
         makeBuilding("SANTA_ROSA",500,610,20,20);
-	//add WEBB
         makeBuilding("WEBB",565,456,20,20);
-	//add DLG
         makeBuilding("DLG",470,700,20,20);
 	//****END OF BUILDINGS*****
 	//add explicit exit instructions
@@ -162,7 +121,13 @@ public class MapGui extends JFrame
 	buildingNames = new String[boxes.size()];
 	namesToStringList();
         JComboBox dropDown = new JComboBox(buildingNames);
-	dropDown.setBounds(300, 20,200,30);
+
+	//Requires SwingX support GrazedLists more easily converts
+	//http://www.glazedlists.com/
+	AutoCompleteJComboBox.decorate(dropDown); //find in method AutoCompleteJComboBox.java
+	//AutoCompleteSupport.install(dropDown, GlazedLists.eventListOf(buildingNames));
+	
+	dropDown.setBounds(300, 20,200,30);	
 	transparentPanel.add(dropDown);
 
 	//ActionListener for dropDown
@@ -276,9 +241,7 @@ public class MapGui extends JFrame
 	    
 	}
     }
-    
-    
-    
+        
     public static void main(String[] args)
     {
 	MapGui map = new MapGui();
@@ -287,7 +250,8 @@ public class MapGui extends JFrame
 	
 	
     }
-    
+
+    //make building method
     public void makeBuilding(String name, int x, int y, int l, int w) {
 	    BuildingCheckBox abbrev = new BuildingCheckBox();
 	    abbrev.Name = name;
