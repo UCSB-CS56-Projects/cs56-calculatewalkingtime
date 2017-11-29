@@ -34,11 +34,13 @@ public class MapGui extends JFrame
 
 	//add HFH
 	
-	BuildingCheckBox HFH = new BuildingCheckBox();
+	/*BuildingCheckBox HFH = new BuildingCheckBox();
 	HFH.Name = "HFH";
 	HFH.setBounds(710,430,20,20);
 	transparentPanel.add(HFH); 
-	boxes.add(HFH);	
+	boxes.add(HFH);	*/
+
+	Building("HFH",710,430,20,20);
 
 	//add RGYM
 
