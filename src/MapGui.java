@@ -2,6 +2,13 @@ import java.util.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.io.*;
+// a simple issues library
+//import ca.odell.issuezilla.*;
+// glazed lists
+//import ca.odell.glazedlists.*;
+//import ca.odell.glazedlists.swing.*;
+
 public class MapGui extends JFrame
 {
     JTextArea exitExplicit = new JTextArea();
@@ -29,146 +36,49 @@ public class MapGui extends JFrame
 	transparentPanel.setLayout(null);
 
 	//BUILDINGS ARE:
-	//HFH, LIB, CAMPBELL, UCEN, SAN NIC, REC CEN, PHELPS, HSSB, SRB, MARINE BIO, PYSCH, MANZI,, NORTH, GIRVETZ,, EVENTS CENTER 
+	//HFH, LIB, CAMPBELL, UCEN, SAN NIC, REC CEN, PHELPS, HSSB, SRB, MARINE BIO, PYSCH, MANZI, NORTH, GIRVETZ, EVENTS CENTER, RGYM, ANCAP HALL 
 
-	//add HFH
-	
-	BuildingCheckBox HFH = new BuildingCheckBox();
-	HFH.Name = "HFH";
-	HFH.setBounds(710,430,20,20);
-	transparentPanel.add(HFH); 
-	boxes.add(HFH);
-	
-
-
-
-	//add DAVDIDSON
-	
-	BuildingCheckBox LIB = new BuildingCheckBox();
-	LIB.Name = "LIB";
-	LIB.setBounds(460, 430, 20,20);
-	transparentPanel.add(LIB);
-	boxes.add(LIB);
-
-
-	//add CAMPBELL
-
-	BuildingCheckBox CAMPB_HALL = new BuildingCheckBox();
-	CAMPB_HALL.Name = "CAMPB";
-	CAMPB_HALL.setBounds(475, 246, 20,20);
-	transparentPanel.add(CAMPB_HALL);
-	boxes.add(CAMPB_HALL);
-
-	//add UCEN 
-
-	BuildingCheckBox UCEN = new BuildingCheckBox();
-	UCEN.Name = "UCEN";
-	UCEN.setBounds(370,565,20,20);
-	transparentPanel.add(UCEN);
-	boxes.add(UCEN);
-
-
-	//add San Nic 
-
-	BuildingCheckBox SAN_NIC = new BuildingCheckBox();
-	SAN_NIC.Name = "SAN NIC";
-	SAN_NIC.setBounds( 420, 700, 20,20);
-	boxes.add(SAN_NIC);
-	transparentPanel.add(SAN_NIC);
-
-	//add REC CEN 
-
-	BuildingCheckBox REC = new BuildingCheckBox();
-	REC.Name = "RECEN";
-	REC.setBounds(265,110,20,20);
-	boxes.add(REC);
-	transparentPanel.add(REC);
-
-	//add SRB 
-	BuildingCheckBox SRB  = new BuildingCheckBox();
-	SRB.Name = "SRB";
-	SRB.setBounds(55, 490,20,20);
-	boxes.add(SRB);
-	transparentPanel.add(SRB);
-	    
-
-	//add MARINE BIO
-	BuildingCheckBox MARINE = new BuildingCheckBox();
-	MARINE.Name = "MLAB";
-	MARINE.setBounds(590, 810, 20,20);
-	boxes.add(MARINE);
-	transparentPanel.add(MARINE);
-	   
+	makeBuilding("HFH",710,430,20,20);
+	makeBuilding("RGYM",246,248,20,20);
+	makeBuilding("ANCAP_HALL",590,610,20,20);
+	makeBuilding("LIB",460,430,20,20);
+	makeBuilding("CAMPB_HALL",475, 246, 20,20);
+        makeBuilding("UCEN",370,565,20,20);
+        makeBuilding("SAN_NIC",420, 700, 20,20);
+	makeBuilding("REC",265,110,20,20);
+	makeBuilding("SRB",55, 490,20,20);
+        makeBuilding("MARINE",590, 810, 20,20);
 	super.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	dp.add(lbl,new Integer(50));
 	dp.add(transparentPanel,new Integer(350));
 	
 	setLayeredPane(dp);
-	
-	
-	
-	//add HSSB 
 
-	BuildingCheckBox HSSB = new BuildingCheckBox();
-	HSSB.Name = "HSSB";
-	HSSB.setBounds(189, 434, 20,20);
-	boxes.add(HSSB);
-	transparentPanel.add(HSSB);
-
-	//add MANZI
-
-	BuildingCheckBox MANZI = new BuildingCheckBox();
-	MANZI.Name = "MANZ";
-	MANZI.setBounds(43, 740,20,20);
-	boxes.add(MANZI);
-	transparentPanel.add(MANZI);
-	      	       		
-	//add PHELPS
-
-	BuildingCheckBox PHELPS = new BuildingCheckBox();
-	PHELPS.Name  = "PHELP";
-	PHELPS.setBounds(530,250,20,20);
-	boxes.add(PHELPS);
-	transparentPanel.add(PHELPS);
-	
-	// add Psych 12th
-
-	BuildingCheckBox PSYCH = new BuildingCheckBox();
-	PSYCH.Name = "PSYCH";
-	PSYCH.setBounds(480,520,20,20);
-	boxes.add(PSYCH);
-	transparentPanel.add(PSYCH);
-
-
-	//add North Hall
-
-	BuildingCheckBox NH = new BuildingCheckBox();
-	NH.Name = "NH";
-	NH.setBounds(410,326,20,20);
-	boxes.add(NH);
-	transparentPanel.add(NH);
-
-
-
-	//add GIRVETZ 
-
-	BuildingCheckBox GIRV = new BuildingCheckBox();
-	GIRV.Name = "GIRV";
-	GIRV.setBounds(380,420,20,20);
-	boxes.add(GIRV);
-	transparentPanel.add(GIRV);
-
-
-	//add Events Center
-
-	BuildingCheckBox EC = new BuildingCheckBox();
-	EC.Name = "EVENT CENTR";
-	EC.setBounds(130, 440, 20,20);
-	boxes.add(EC);
-	transparentPanel.add(EC);
-
+        makeBuilding("HSSB",189, 434, 20,20);
+        makeBuilding("MANZI",43, 740,20,20);	
+	makeBuilding("PHELPS",530,250,20,20);
+        makeBuilding("PSYCH",480,520,20,20);
+        makeBuilding("NH",410,326,20,20);
+        makeBuilding("GIRV",380,420,20,20);
+        makeBuilding("EC",130, 440, 20,20);
+        makeBuilding("ARTS",260,510,20,20);
+        makeBuilding("BIOL2",628,520,20,20);
+        makeBuilding("BROIDA",595,380,20,20);
+        makeBuilding("BREN",653,470,20,20); 
+        makeBuilding("BUCHN_HALL",516,298,20,20);			    
+        makeBuilding("CHEM",623,316,20,20);
+        makeBuilding("ENGR2",695,346,20,20);
+        makeBuilding("KOHN",780,320,20,20);
+        makeBuilding("LSB",565,568,20,20);
+        makeBuilding("MUSIC",370,517,20,20);
+        makeBuilding("NOBLE",550,510,20,20);
+        makeBuilding("SAN_MIGEL",370,645,20,20);
+	makeBuilding("SAN_RAFEL",110,610,20,20);
+        makeBuilding("SANTA_CRUZ",590,680,20,20);
+        makeBuilding("SANTA_ROSA",500,610,20,20);
+        makeBuilding("WEBB",565,456,20,20);
+        makeBuilding("DLG",470,700,20,20);
 	//****END OF BUILDINGS*****
-
 	//add explicit exit instructions
 
 	exitExplicit.setEditable(false);
@@ -211,7 +121,13 @@ public class MapGui extends JFrame
 	buildingNames = new String[boxes.size()];
 	namesToStringList();
         JComboBox dropDown = new JComboBox(buildingNames);
-	dropDown.setBounds(300, 20,200,30);
+
+	//Requires SwingX support GrazedLists more easily converts
+	//http://www.glazedlists.com/
+	AutoCompleteJComboBox.decorate(dropDown); //find in method AutoCompleteJComboBox.java
+	//AutoCompleteSupport.install(dropDown, GlazedLists.eventListOf(buildingNames));
+	
+	dropDown.setBounds(300, 20,200,30);	
 	transparentPanel.add(dropDown);
 
 	//ActionListener for dropDown
@@ -248,10 +164,9 @@ public class MapGui extends JFrame
 		resultText.setText(UCSBWalk.result);
 		}
 		else if(numSelected > 2)
-		    resultText.setText("You clicked more than two buildings!");
-
+		    JOptionPane.showMessageDialog(null, "You clicked more than two buildings!", "Two Checkboxes ONLY", JOptionPane.WARNING_MESSAGE);
 		else
-		    resultText.setText("You need to click two buildings!");
+		    JOptionPane.showMessageDialog(null, "You need to click two buildings!", "Two Checkboxes Please", JOptionPane.WARNING_MESSAGE);
 				      
 	    
 	}
@@ -268,10 +183,9 @@ public class MapGui extends JFrame
 		resultText.setText(UCSBWalk.result);
 		}
 		else if(numSelected > 2)
-		    resultText.setText("You clicked more than two buildings!");
-
+		    JOptionPane.showMessageDialog(null, "You clicked more than two buildings!", "Two Checkboxes ONLY", JOptionPane.WARNING_MESSAGE);
 		else
-		    resultText.setText("You need to click two buildings!");
+		    JOptionPane.showMessageDialog(null, "You need to click two buildings!", "Two Checkboxes Please", JOptionPane.WARNING_MESSAGE);
 				      
 	    
 	}
@@ -288,9 +202,9 @@ public class MapGui extends JFrame
 		}
 
 		else if(numSelected > 2 )
-		    resultText.setText("You clicked more than two buildings!");
+		    JOptionPane.showMessageDialog(null, "You clicked more than two buildings!", "Two Checkboxes ONLY", JOptionPane.WARNING_MESSAGE);
 		else
-		    resultText.setText("You need to click two buildings!");
+		    JOptionPane.showMessageDialog(null, "You need to click two buildings!", "Two Checkboxes Please", JOptionPane.WARNING_MESSAGE);
 
 
 	}
@@ -327,9 +241,7 @@ public class MapGui extends JFrame
 	    
 	}
     }
-    
-    
-    
+        
     public static void main(String[] args)
     {
 	MapGui map = new MapGui();
@@ -338,6 +250,14 @@ public class MapGui extends JFrame
 	
 	
     }
-    
+
+    //make building method
+    public void makeBuilding(String name, int x, int y, int l, int w) {
+	    BuildingCheckBox abbrev = new BuildingCheckBox();
+	    abbrev.Name = name;
+	    abbrev.setBounds(x,y,l,w);
+	    boxes.add(abbrev);
+	    transparentPanel.add(abbrev);
+    }
     
 }

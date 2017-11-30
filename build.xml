@@ -3,17 +3,18 @@
 <project default="compile">
 
   <!-- build.xml for CS56, W16, CS56
-       name: @@@ Jonathan Segovia and Michael Caccamo @@@  -->
+       name: @@@ Jonathan Segovia and Michael Caccamo @@@
+       edited: @@@ Jack Liu and Charles Gu (Fall 2017) @@@-->
 
    <property environment="env"/> <!-- load the environment variables --> 
    <property name="webRoot" value="${env.HOME}/public_html/cs56" />
    <property name="webBaseURL" value="http://www.cs.ucsb.edu/~${env.USER}/cs56" />
-    <property name="projectName" value="CP2" /> 
+   <property name="projectName" value="CP2" /> 
    <property name="javadocDest" value="${webRoot}/S12/issues/0000759/javadoc" /> 
    <property name="javadocURL" value="${webBaseURL}/S12/issues/0000759/javadoc" />
    <property name="mainClass" value="cd ./build" /> 
-  <property name="go" value="cd build" /> 
-  <property name="go1" value="java ucsbTime" />
+   <property name="go" value="cd build" /> 
+   <property name="go1" value="java ucsbTime" />
  
   <path id = "project.class.path">
     <pathelement location = "build"/>
@@ -22,19 +23,18 @@
  
  
  
-
-  <target name="compile" >  
+  <!--compile-->
+  <target name="compile" >
     <mkdir dir="build" />
-    <copy file = "src/LatLong.txt" todir="build"/>    <copy file = "src/map.jpg" todir = "build"/>
+    <copy file = "src/LatLong.txt" todir="build"/>
+    <copy file = "src/map.jpg" todir = "build"/>
     <javac srcdir="src" destdir="build" includeantruntime="false" debug="true" debuglevel="lines,vars,source" >   
-      
-      
-     <classpath refid = "project.class.path"/>                                                                                                                     <!--
+      <classpath refid = "project.class.path"/>                                                                                                                       <!--
          <pathelement location="build"/>                                                                                                          
          <pathelement location="/cs/faculty/pconrad/public_html/cs56/lib/junit-4.8.2.jar"/>                                                   
-                     -->                                           
-   </javac>       
- </target>
+     -->                                           
+    </javac>
+  </target>
 
  <target name="jar" depends="compile">                                          
    <mkdir dir="dist" />                                                         
@@ -46,77 +46,31 @@
  </target> 
 
 
-
-
-
   <target name="run"  description="run the UCSBWalk program">
     <java fork = "true" classpathref = "project.class.path"
 	  classname = "MapGui"
-	  />
-	  
+	  />	  
   </target>
     
 
-
-
-
-
-
-
-<target name="download" > 
- 
-  <delete quiet="true"> 
-     <fileset dir="temp" includes="**/*" />  
-     <fileset dir="download" includes="**/*" />  
-  </delete> 
- 
-  <mkdir dir="download" /> 
-  <mkdir dir="temp" />  
-  <mkdir dir="temp/${projectName}" /> 
- 
-  <copy todir="temp/${projectName}"> 
-    <fileset dir="." 
-     excludes="build/**, javadoc/**, **/*~, temp/**, dist/**, download/**"/> 
-  </copy> 
- 
-  <tar destfile="temp/${projectName}.tar"
-       basedir="temp"
-       includes="${projectName}/**" 
-   /> 
- 
-  <gzip zipfile="download/${projectName}.tgz" 
-        src="temp/${projectName}.tar" /> 
- 
-  <zip destfile="download/${projectName}.zip"
-       basedir="temp"
-       includes="${projectName}/**"
-  /> 
- 
-  <delete quiet="true"> 
-     <fileset dir="temp" includes="**/*"/>  
-  </delete> 
-  
-</target> 
-
-
-<target name="clean" >
+  <!--clean-->
+  <target name="clean" >
     <delete dir="build" quiet="true" />    
     <delete dir="javadoc" quiet="true" />
     <delete dir="dist" quiet="true" />   
     <delete dir="download" quiet="true" />                                         
     <delete dir="temp" quiet="true" />      
- 
-</target>
+  </target>
 
-   <target name="javadoc" depends="compile">                                                        
-                                                                                                  
-   <delete dir="javadoc" quiet="true" />                                                          
-   <javadoc  destdir="javadoc" author="true" version="true" use="true" >                          
+  <!--javadoc-->
+  <target name="javadoc" depends="compile">                                                        
+    <delete dir="javadoc" quiet="true" />                                                          
+    <javadoc  destdir="javadoc" author="true" version="true" use="true" >                          
       <fileset dir="src" includes="**/*.java"/>                                                     
       <classpath>                                                                                 
           <pathelement location="/cs/faculty/pconrad/public_html/cs56/lib/junit-4.8.2.jar"/>      
-      </classpath>                                                                                 
-   </javadoc>                                                                                     
+      </classpath>
+    </javadoc>                                                                                     
                                                                                                   
    <!-- delete the old javadoc -->                                                                
    <delete quiet="true" dir="${javadocDest}" />                                                   
@@ -136,13 +90,7 @@
    <chmod dir="${javadocDest}" perm="755"  type="file" includes="**/*" />                         
    <echo>Javadoc deployed to ${javadocURL}</echo>                                                 
                                                                                                   
-   </target> 
-
-
-
-         
-
-
-
+  </target>
+  
 </project>
 
