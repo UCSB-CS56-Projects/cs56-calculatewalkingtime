@@ -4,7 +4,7 @@ Calculates time by walking or by biking to get from building to building at UCSB
 
 # Javadoc
 * [on cgu08](http://cgu08.github.io/cs56-calculatewalkingtime/javadoc)
-* [on ucsb-cs56-project](http://ucsb-cs56-project.github.io/cs56-calculatewalkingtime/javadoc)
+* [on ucsb-cs56-project](http://ucsb-cs56-projects.github.io/cs56-calculatewalkingtime/javadoc/index)
 
 ## Building and Running Project
 To run:
